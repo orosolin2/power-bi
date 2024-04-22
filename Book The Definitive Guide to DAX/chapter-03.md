@@ -23,3 +23,44 @@
   )
 )
 ```
+### EVALUATE syntax
+
+<p>
+  You can use DAX both as a programming language and as a query language.
+</p>
+
+<p>
+  The initial DEFINE MEASURE part can be useful to define measures thar are local to the query (that
+  is, they exist for the lifetime of the query). It becomes very useful when you are debugging formulas, 
+  because you can define a local measure, test it, and then put it in the model once it behaves as 
+  expected.
+</p>
+
+```
+[DEFINE { MEASURE <tableName>[<name>] = <expression> }]
+EVALUATE <table>
+[ORDER BY {<expression> [{ASC | DESC}]} [, ...]
+  [START AT {<value|<parameter>} [, ...]] ]
+```
+
+```
+EVALUATE Product
+```
+
+```
+EVALUATE Product
+ORDER BY
+  Product[Color],
+  Product[Brand] ASC,
+  Product[Class] DESC
+```
+
+```
+EVALUATE Product
+ORDER BY
+  Product[Color],
+  Product[Brand] DESC,
+  Product[Class] DESC
+START AT
+  "Yellow", "Tailspin Toys"
+```
