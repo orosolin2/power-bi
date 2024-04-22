@@ -1,2 +1,2 @@
 # power-bi
-Power BI reports
+Relatórios em Power BI, DAX e M
