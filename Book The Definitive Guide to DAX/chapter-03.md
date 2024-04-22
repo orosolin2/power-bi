@@ -125,7 +125,51 @@ FILTER(
 ```
 
 <p>
-  FILTER iterates the <table> and, for each row, evaluated the <condition>, which is a Boolean
-  expression. When the <condition> evaluates to TRUE, FILTER returns the row; otherwise, it skips it.
+  FILTER iterates the "table" and, for each row, evaluated the "condition", which is a Boolean
+  expression. When the "condition" evaluates to TRUE, FILTER returns the row; otherwise, it skips it.
 </p>
 
+```
+EVALUATE
+FILTER(
+  Product,
+  Product[Brand] = "Fabrikam"
+)
+```
+
+```
+EVALUATE
+FILTER(
+  Product,
+  AND(
+    Product[Brand] = "Fabrikam",
+    Product[Unit Price] > Product[Unit Cost] * 3
+  )
+)
+```
+
+```
+EVALUATE
+FILTER(
+  FILTER(
+    Product,
+    Product[Unit Price] > Product[Unit Cost] * 3
+  ),
+  Product[Brand] = "Fabrikam"
+)
+```
+
+```
+EVALUATE
+FILTER(
+  FILTER(
+    Product,
+    Product[Brand] = "Fabrikam"
+  ),
+  Product[Unit Price] > Product[Unit Cost] * 3
+)
+```
+
+<p>
+  You might choose the execution order to apply the most selective filter first.
+</p>
