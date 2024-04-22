@@ -244,3 +244,16 @@ COUNTROWS(
   ignoring unmatched values in relationships. However, the use of ALL is common, whereas
   ALLNOBLANKROW is seldom used.
 </p>
+
+### VALUES function
+
+<p>
+  VALUES returns the list of unique values that are visible in the current cell, including the optional
+  blank row for unmatched values.
+</p>
+
+### DISTINCT function
+
+<p>
+  DISTINCT does the same as VALUES, without returning the blank row for unmatched values.
+</p>
