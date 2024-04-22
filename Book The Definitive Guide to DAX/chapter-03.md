@@ -64,3 +64,48 @@ ORDER BY
 START AT
   "Yellow", "Tailspin Toys"
 ```
+
+### Using table expressions
+
+<p>
+  A typical use is in functions that iterate a table, computing a DAX expression 
+  for each row.
+</p>
+
+```
+[Sales Amount] :=
+SUMX(
+  Sales,
+  Sales[Quantity] * Sales[Unit Price]
+)
+```
+
+```
+[Sales Amount Multiple Items] :=
+SUMX(
+  FILTER(
+    Sales,
+    Sales[Quantity] > 1
+  ),
+  Sales[Quantity] * Sales[Unit Price]
+)
+```
+
+```
+Product[Product Sales Amount] =
+SUMX(
+  RELATEDTABLE(Sales),
+  Sales[Quantity] * Sales[Unit Price]
+)
+```
+
+```
+Product[Product Sales Amount Multiple Items] =
+SUMX(
+  FILTER(
+    RELATEDTABLE(Sales),
+    Sales[Quantity] > 1
+  ),
+  Sales[Quantity] * Sales[Unit Price]
+)
+```
