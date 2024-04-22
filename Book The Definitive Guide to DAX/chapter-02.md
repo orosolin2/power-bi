@@ -83,7 +83,7 @@ SWITCH(
   RELATED function enables you to access columns in the related table. It does not matter how 
   many steps are necessary to travel from the original table to the related one,  DAX will follow
   the  complete chain of  relationship and return the related column value.
-  In a one-to-many relationship, RELATED can **access the one-side from the many-side**. If no such row
+  In a one-to-many relationship, RELATED can access the one-side from the many-side. If no such row
   exists, RELATED simply returns BLANK.
 </p>
 
@@ -100,8 +100,8 @@ IF(
 
 <p>
   RELATEDTABLE returns a table containing all the rows related to the current one.
-  RELATEDTABLE follow a chain of relationship always **starting from the one-side and going in the 
-  direction of the many-side**.
+  RELATEDTABLE follow a chain of relationship always starting from the one-side and going in the 
+  direction of the many-side.
 </p>
 
 ```
