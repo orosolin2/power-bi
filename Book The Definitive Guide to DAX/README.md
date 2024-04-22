@@ -6,11 +6,7 @@
 <p>
 An iterator does exactly what it name suggests: it iterates over a table and performs a calculation on each row of
 the table, aggregating the result to produce the single value you needed.
+
+https://github.com/orosolin2/power-bi/blob/main/Book%20The%20Definitive%20Guide%20to%20DAX/chapter01-using-iterators.txt
+
 </p>
-```
-[AllSales] :=
-SUMX(
-  Sales, 
-  Sales[ProductQuantity] * Sales[ProductPrice]
-)
-```
