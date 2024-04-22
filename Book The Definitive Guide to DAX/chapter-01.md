@@ -75,3 +75,34 @@ FILTER(
   [SumOfSales] > 100
 )
 ```
+
+### Hierarchies
+
+<p>
+  Using filter contexts and standard time intelligence functions.
+</p>
+
+```
+[SamePeriodPreviousYearSales] :=
+CALCULATE(
+  SUM(Sales[SalesAmount]),
+  SAMEPERIODLASTYEAR(Date[Date])
+)
+```
+
+<p>
+  If you want to clear a measure at the Year level, you need to check the presence of
+  filters in the filter context.
+</p>
+
+```
+[SamePeriodPreviousYearSales] :=
+IF(
+  ISFILTERED(Date[Month]),
+  CALCULATE(
+    SUM(Sales[Sales Amount]),
+    SAMEPERIODLASTYEAR(Date[Date])
+  ),
+  BLANK()
+)
+```
