@@ -37,3 +37,20 @@ SUMMARIZE(
   "SumOfSales", SUM(Sales[SalesAmount])
 )
 ```
+
+<p>
+Using DAX, you do not declare the WHERE condition in the query. Instead, you yse a specific
+function (FILTER) to filter the result:
+</p>
+
+```
+EVALUATE
+SUMMARIZE(
+  FILTER(
+    Customers,
+    Customers[Continent] = "Europe"
+  ),
+  Customers[CustomerName],
+  "SumOfSales", SUM(Sales[SalesAmount])
+)
+```
