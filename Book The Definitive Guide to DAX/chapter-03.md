@@ -231,3 +231,16 @@ ALLEXCEPT(
   child table contains one or more rows that do not match any values in the parent  table. You can omit
   this special row from the result by using ALLNOBLANKROW instead of ALL.
 </p>
+
+```
+[All NoBlank Brands] :=
+COUNTROWS(
+  ALLNOBLANKROW(Product[Brand])
+)
+```
+
+<p>
+  You should use ALLNOBLANKROW only  when you  write a DAX formula that iterates values
+  ignoring unmatched values in relationships. However, the use of ALL is common, whereas
+  ALLNOBLANKROW is seldom used.
+</p>
