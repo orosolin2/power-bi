@@ -109,3 +109,23 @@ SUMX(
   Sales[Quantity] * Sales[Unit Price]
 )
 ```
+
+### Understanding FILTER
+
+<p>
+  The FILTER function has a simple role: It gets a table and returns a table that has the same columns as
+  in the original table, but contains only the rows that satisfy a filter condition applied row by row.
+</p>
+
+```
+FILTER(
+  <table>,
+  <condition>
+)
+```
+
+<p>
+  FILTER iterates the <table> and, for each row, evaluated the <condition>, which is a Boolean
+  expression. When the <condition> evaluates to TRUE, FILTER returns the row; otherwise, it skips it.
+</p>
+
