@@ -48,6 +48,8 @@ RETURN
 
 ### Logical functions
 
+#### SWITCH
+
 <p>
   Internally, DAX translates SWITCH statements into  a set of nested IF functions.
 </p>
@@ -70,5 +72,40 @@ SWITCH(
   Product[Size] = "XL" && Product[Color] = "Red", "Red and XL",
   Product[Size] = "XL" && Product[Color] = "Blue", "Blue and XL",
   Product[Size] = "L" & Product[Color] = "Green", "Green and L"
+)
+```
+
+### Relational functions
+
+#### RELATED
+
+<p>
+  RELATED function enables you to access columns in the related table. It does not matter how 
+  many steps are necessary to travel from the original table to the related one,  DAX will follow
+  the  complete chain of  relationship and return the related column value.
+  In a one-to-many relationship, RELATED can **access the one-side from the many-side**. If no such row
+  exists, RELATED simply returns BLANK.
+</p>
+
+```
+Sales[AdjustedCost] =
+IF(
+  RELATED('Product Category'[Category]) = "Cell Phone",
+  Sales[UnitCost] * 0.95,
+  Sales[UnitCost]
+)
+```
+
+#### RELATEDTABLE
+
+<p>
+  RELATEDTABLE returns a table containing all the rows related to the current one.
+  RELATEDTABLE follow a chain of relationship always **starting from the one-side and going in the 
+  direction of the many-side**.
+</p>
+
+```
+=COUNTROWS(
+  RELATEDTABLE(Product)
 )
 ```
