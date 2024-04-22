@@ -48,6 +48,10 @@ RETURN
 
 ### Logical functions
 
+<p>
+  Internally, DAX translates SWITCH statements into  a set of nested IF functions.
+</p>
+
 ```
 SizeDesc =
   SWITCH(
@@ -58,4 +62,13 @@ SizeDesc =
     "XL", "Extra Large",
     "Other"
   )
+```
+
+```
+SWITCH(
+  TRUE(),
+  Product[Size] = "XL" && Product[Color] = "Red", "Red and XL",
+  Product[Size] = "XL" && Product[Color] = "Blue", "Blue and XL",
+  Product[Size] = "L" & Product[Color] = "Green", "Green and L"
+)
 ```
