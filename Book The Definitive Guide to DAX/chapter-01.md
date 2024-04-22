@@ -1,6 +1,12 @@
 # The Definitive Guide to DAX
 
 ## Chapter 1: What is DAX?
+<p>
+  DAX is the programming language of Microsoft SQL Server Analysis Services (SSAS) and Microsoft
+  Power Pivot for Excel. It was created in 2010, with the first release of the PowerPivot for Excel 2010.
+  Over time, DAX gained popularity in the Excel community, which uses DAX to create Power Pivot data models
+  in Excel, and in the Business Intelligence (BI) community, which uses DAX to build models with SSAS.
+</p>
 
 ### Using iterators
 <p>
