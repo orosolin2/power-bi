@@ -1,5 +1,0 @@
-[AllSales] :=
-SUMX(
-  Sales, 
-  Sales[ProductQuantity] * Sales[ProductPrice]
-)
