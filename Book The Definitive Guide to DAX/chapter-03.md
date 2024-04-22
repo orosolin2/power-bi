@@ -173,3 +173,55 @@ FILTER(
 <p>
   You might choose the execution order to apply the most selective filter first.
 </p>
+
+### ALL function
+
+<p>
+  ALL is a useful function that returns all the rows of a table or all the values of a column, depending
+  on the parameter you use.
+</p>
+
+```
+EVALUATE
+ALL(Product)
+```
+
+```
+EVALUATE
+ALL(Product[Class])
+```
+
+```
+EVALUATE
+ALL(
+  Product[Class],
+  Product[Color]
+)
+ORDER BY Product[Color]
+```
+
+<p>
+  In all of its variations, ALL ignores any existing filter to produce its result. You can use ALL as an 
+  argument of an iteration function, such as SUMX and FILTER, or as filter argument in a CALCULATE
+  function.
+</p>
+
+### ALLEXCEPT function
+
+<p>
+  If you want to include most of the columns of a table in an ALL function call, you can use 
+  ALLEXCEPT instead. The syntax of ALLEXCEPT requires a table followed by the columns you want
+  to exclude from the result. As a result, ALLEXCEPT returns a table with a  unique list of existing
+  combinations of values in the other columns of the table
+</p>
+
+```
+EVALUATE
+ALLEXCEPT(
+  Product,
+  Product[ProductKey],
+  Product[Color]
+)
+```
+
+### ALLNOBLANKROW function
