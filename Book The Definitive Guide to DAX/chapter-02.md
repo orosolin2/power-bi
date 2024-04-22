@@ -38,3 +38,24 @@ VAR
 RETURN
   (TotalSales - SUM(Sales[TotalProductCost])) / TotalSales
 ```
+
+### Empty or missing values
+
+<p>
+  DAX handles missing values, blank values, or empty cells in the same way, using the value BLANK.
+  BLANK is not a real value but a special way to identify these conditions.
+</p>
+
+### Logical functions
+
+```
+SizeDesc =
+  SWITCH(
+    Product[Size], 
+    "S", "Small",
+    "M", "Medium",
+    "L", "Large",
+    "XL", "Extra Large",
+    "Other"
+  )
+```
