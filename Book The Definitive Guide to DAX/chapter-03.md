@@ -225,3 +225,9 @@ ALLEXCEPT(
 ```
 
 ### ALLNOBLANKROW function
+
+<p>
+  When you call ALL on a parent table of a relationship, you retrieve an additional blank row if the 
+  child table contains one or more rows that do not match any values in the parent  table. You can omit
+  this special row from the result by using ALLNOBLANKROW instead of ALL.
+</p>
