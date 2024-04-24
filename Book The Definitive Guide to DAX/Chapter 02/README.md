@@ -9,9 +9,7 @@ filters, or values of a pivot table or any other report. You can also a calculat
 relationship, if needed. The DAX expression defined for a calculated column operates in the context of 
 the current row of the table to which it belongs. Any reference to a column returns the value of that
 column for the current row. You canot directly access the values of other rows.
-
 </br></br>
-
 Calculated columns are computed during the database processing and then stored in the model. The time
 required to compute them is always process time and not query time, resulting in a better user experience.
 Nevertheless, you always must remember that calculated column uses precious RAM.
