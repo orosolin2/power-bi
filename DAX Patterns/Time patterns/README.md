@@ -23,7 +23,7 @@ What makes the patterns so different from one another, is the definition of what
 
 ### 1. Standard time-related calculations
 https://www.daxpatterns.com/standard-time-related-calculations/</br>
-https://www.daxpatterns.com/standard-time-related-calculations/#video</br>
+https://www.sqlbi.com/p/dax-patterns-standard-time-related-calculations/</br>
 
 This pattern is implemented using regular DAX time intelligence functinos.</br>
 
