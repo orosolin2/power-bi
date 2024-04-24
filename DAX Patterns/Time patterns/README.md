@@ -21,17 +21,7 @@ Another example of time-related calculations is the moving average over a time p
 
 What makes the patterns so different from one another, is the definition of what a calendar is. Depending on whether you are working with the Gregorian or the fiscal calendar, the numbers are different.
 
-### 1. Standard time-related calculations
-https://www.daxpatterns.com/standard-time-related-calculations/</br>
-https://www.sqlbi.com/p/dax-patterns-standard-time-related-calculations/</br>
-
-This pattern is implemented using regular DAX time intelligence functinos.</br>
-
-It  works bases on the assumption that your calendar is a regular Gregorian calendar and that your fiscal calendar starts at the beggining of a Gregorian quarter.</br>
-
-If your are using a regfular Gregorian calendar, then the formulas in this pattern are the easiest and most effective way of producing time intelligence calculations. Keep in mind that standard DAX time intelligence functions only support a regular Gregorian calendar - that is a calendar witrh 12 months, each month with its Gregorian number of days, quarters made up of three months, and all the regular aspects of a calendar that we are used to.
-
-
-### 2. Month-related calculations
-### 3. Week-related calculations
-### 4. Custom time-related calculations
+* [Standard time-related calculations](https://github.com/orosolin2/power-bi/tree/main/DAX%20Patterns/Time%20patterns/Standard%20time-related%20calculations)
+* [Month-related calculations](https://github.com/orosolin2/power-bi/tree/main/DAX%20Patterns/Time%20patterns/Month-related%20calculations)
+* [Week-related calculations](https://github.com/orosolin2/power-bi/tree/main/DAX%20Patterns/Time%20patterns/Week-related%20calculations)
+* [Custom time-related calculations](https://github.com/orosolin2/power-bi/tree/main/DAX%20Patterns/Time%20patterns/Custom%20time-related%20calculations)
