@@ -3,7 +3,7 @@
 ## Chapter 3: Using basic table functions
 
 <p>
-  You cannot assign a table expression directly to a measure or to a calculated column.
+  You cannot assign a table expression directly to a measure or to a calculated column.</br>
 </p>
 
 ```
@@ -23,6 +23,9 @@
   )
 )
 ```
+>If a table expression returns a table with one row and one column, a conversion to a scalar value is 
+>possible and done automatically if required.
+
 ### EVALUATE syntax
 
 <p>
@@ -249,11 +252,26 @@ COUNTROWS(
 
 <p>
   VALUES returns the list of unique values that are visible in the current cell, including the optional
-  blank row for unmatched values.
+  blank row for unmatched values.</br>
+  When there are no filters, the behavior of VALUES corresponds to ALL.</br>
+  VALUES also accepts a table as an argument. In that case, it returns the whole table that is visible in 
+  the current cell, optionally including the blank row for unmatched relationships.</br></br>
 </p>
+<p>
+  Even if VALUES is a table function, you will often use it to compute scalar values.
+</p>
+
+```
+[Color Name] :=
+IF(
+  COUNTROWS(VALUES(Product[Color])) = 1,
+  VALUES(Product[Color])
+)
+```
 
 ### DISTINCT function
 
 <p>
-  DISTINCT does the same as VALUES, without returning the blank row for unmatched values.
+  DISTINCT does the same as VALUES, without returning the blank row for unmatched values.</br>
+  When there are no filters, the behavior of DISTINCT corresponds to ALLNOBLANKROW.
 </p>
