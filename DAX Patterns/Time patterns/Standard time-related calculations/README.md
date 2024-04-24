@@ -14,4 +14,7 @@ If your are using a regfular Gregorian calendar, then the formulas in this patte
 In order to use any time intelligence calculation, you need a well-formed date table. The _Date_ table must satisfy the following requirements:
 
 * All dates need to be present for the years required. The _Date_ table must alwaysstart on January 1 and end on December 31, including all the days in this range. If the report only references fiscal years, then the _Date_ table must include all the dates from the first to the last day of a fiscal year.
-* There need to be a column with a _DateTime_ or _Date_ data type containing unique values. This column is usually called _Date_. Even though the _Date_ column is often used to define relationships with another tables, this is not required. Still, the _Date_ column must contain unique values and should be referenced by the Mark as Date Table feature.
+* There need to be a column with a _DateTime_ or _Date_ data type containing unique values. This column is usually called _Date_. Even though the _Date_ column is often used to define relationships with another tables, this is not required. Still, the _Date_ column must contain unique values and should be referenced by the Mark as Date Table feature. In case the column also contains a time part, no time should be used - for example, the time should always be 12:00 am.
+* The _Date_ table must be marked as a date table in the model, in case the relationship between the _Date_ table and any other table is not based on the _Date_.
+
+There are several ways to build a _Date_ table. The way you build the _Date_ table does not affect how you use the standard time 
